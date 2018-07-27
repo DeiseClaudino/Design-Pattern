@@ -1,12 +1,10 @@
 <?php
+  error_reporting(0);
 
-$host = "localhost";
-$user = "root";
-$pass = "";
-$banco = "alura";
+  require 'ConnectionFactory.php';
 
-$conn = mysql_connect($host, $user, $pass, $banco);
+  $factory = new ConnectionFactory();
 
-$select = "SELECT * FROM cursos";
+  $conexao = $factory->getConnection();
 
-var_dump($conn);
+  $select = "SELECT * FROM cursos";
