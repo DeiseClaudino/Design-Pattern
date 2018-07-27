@@ -10,12 +10,12 @@ class Desconto500Reais implements IDesconto
         if ($Orcamento->getValor() > 500) {
             return $Orcamento->getValor() * 0.05;
         } else {
-            return $this->$proximoDesconto->desconta($Orcamento);
+            return $this->proximoDesconto->desconta($Orcamento);
         }
     }
 
     public function setProximo(IDesconto $proximo)
     {
-        $this->$proximoDesconto = $proximo;
+        $this->proximoDesconto = $proximo;
     }
 }

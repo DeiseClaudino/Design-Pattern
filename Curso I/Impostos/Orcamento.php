@@ -4,16 +4,58 @@ class Orcamento
 {
     private $valor;
     private $itens;
+    private $estado;
 
     public function __construct($novoValor)
     {
         $this->valor = $novoValor;
         $this->itens = array();
+        $this->estado = new EmAprovacao();
     }
+
+
+    public function aplicaDescontoExtra()
+    {
+        $this->estado->aplicaDescontoExtra($this);
+    }
+
+
+    public function aprova()
+    {
+        $this->estado->aprova($this);
+    }
+
+
+    public function reprova()
+    {
+        $this->estado->reprova($this);
+    }
+
+
+    public function finaliza()
+    {
+        $this->estado->finaliza($this);
+    }
+
+    public function getEstado()
+    {
+        return $this->estado;
+    }
+
+    public function setEstado(EstadoDeUmOrcamento $estado)
+    {
+        $this->estado = $estado;
+    }
+
 
     public function getValor()
     {
         return $this->valor;
+    }
+
+    public function setValor($valor)
+    {
+        return $this->valor = $valor;
     }
 
     public function getItens()

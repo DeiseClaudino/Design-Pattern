@@ -1,7 +1,12 @@
 <?php
 
-class ICCC implements Imposto
+class ICCC extends Imposto
 {
+  public function __construct($imposto = null)
+  {
+      parent::__construct($imposto);
+  }
+  
   public function calcula(Orcamento $Orcamento)
   {
     if ($Orcamento->getValor() < 1000)

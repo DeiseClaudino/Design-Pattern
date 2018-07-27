@@ -1,27 +1,19 @@
 <?php
 
-require 'Orcamento.php';
-require 'IDesconto.php';
-require 'DescontoPor5Itens.php';
-require 'Desconto500Reais.php';
-require 'Desconto300Reais.php';
-require 'SemDesconto.php';
-require 'Item.php';
-require 'CalculadoraDeImpostos.php';
-require 'CalculadoraDeDescontos.php';
-require 'Imposto.php';
-require 'ICMS.php';
-require 'ISS.php';
-require 'KCV.php';
-require 'ICCC.php';
+echo "Design Patterns I</br></br> ";
 
+function autoloadDeClasses($nomeDaClasse)
+{
+    require $nomeDaClasse.".php";
+}
 
+spl_autoload_register("autoloadDeClasses");
 
-$reforma = new Orcamento(1200);
+$reforma = new Orcamento(500);
 
 $calculadora = new CalculadoraDeImpostos();
 
-echo $calculadora->calcula($reforma, new ICMS());
+echo $calculadora->calcula($reforma, new ICMS(new KCV()));
 
 echo "<br/>";
 
@@ -46,3 +38,21 @@ $reforma->addItem(new Item("CIMENTO 1kg", 250.0));
 $desconto = $calculador->desconto($reforma);
 
 echo $desconto;
+
+echo "<br/>Desconto Extra<br/>";
+
+echo $reforma->getValor()."<br/>";
+
+$reforma->aplicaDescontoExtra();
+
+echo $reforma->getValor()."<br/>";
+
+$reforma->aprova();
+
+$reforma->aplicaDescontoExtra();
+
+echo $reforma->getValor()."<br/>";
+
+$reforma->finaliza();
+
+$reforma->aplicaDescontoExtra();

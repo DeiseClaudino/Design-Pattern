@@ -15,6 +15,6 @@ class Desconto300Reais implements IDesconto
 
     public function setProximo(IDesconto $proximo)
     {
-        $this->$proximoDesconto = $proximo;
+        $this->proximoDesconto = $proximo;
     }
 }

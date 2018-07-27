@@ -1,9 +1,15 @@
 <?php
 
-class KCV implements Imposto
+class KCV extends Imposto
 {
+    public function __construct($imposto = null)
+    {
+        parent::__construct($imposto);
+    }
+
     public function calcula(Orcamento $Orcamento)
     {
-        return $Orcamento->getValor() * 0.2;
+        return $Orcamento->getValor() * 0.2 + $this->calculaOutroImposto($Orcamento);
+        
     }
 }

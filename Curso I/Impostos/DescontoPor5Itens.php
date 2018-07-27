@@ -8,12 +8,12 @@ class DescontoPor5Itens implements IDesconto
         if (count($Orcamento->getItens()) >= 5) {
             return $Orcamento->getValor() * 0.1;
         } else {
-            return $this->$proximoDesconto->desconta($Orcamento);
+            return $this->proximoDesconto->desconta($Orcamento);
         }
     }
 
     public function setProximo(IDesconto $proximo)
     {
-        $this->$proximoDesconto = $proximo;
+        $this->proximoDesconto = $proximo;
     }
 }
