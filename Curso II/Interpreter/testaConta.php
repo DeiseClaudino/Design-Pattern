@@ -28,3 +28,11 @@ $conta = new Soma($esquerda, $direita);
 $resultado = $conta->avalia();
 
 echo "O resultado é: ".$resultado."</br></br>";
+
+echo "Testando a Raíz Quadrada 4</br></br>";
+
+$esquerda = new RaizQuadrada(new Numero(4));
+
+$resultado = $esquerda->avalia();
+
+echo "O resultado é: ".$resultado."</br></br>";
