@@ -19,7 +19,7 @@ class Contrato
 
     public function setTipo(TipoDeContrato $tipo)
     {
-      $this->tipo = $tipo
+      $this->tipo = $tipo;
     }
 
     public function getData()
@@ -46,7 +46,7 @@ class Contrato
 
     public function avanca()
     {
-        $this->tipo->avanca();
+        $this->tipo->avanca($this);
     }
 
     public function salvaEstado()
