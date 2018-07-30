@@ -48,4 +48,11 @@ class Contrato
     {
         return new Estado(new Contrato($this->data, $this->cliente, $this->tipo));
     }
+
+    public function restaura(Estado $estado)
+    {
+        $this->data = $estado->getEstado()->getData();
+        $this->cliente = $estado->getEstado()->getCliente();
+        $this->tipo = $estado->getEstado()->getTipo();
+    }
 }
