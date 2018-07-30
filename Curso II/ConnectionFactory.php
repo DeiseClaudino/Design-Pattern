@@ -2,17 +2,14 @@
 
 class ConnectionFactory
 {
-    public function getConnection($banco)
+    public function getConnection()
     {
-        $conn = false;
+        $host = "localhost";
+        $user = "root";
+        $pass = "";
+        $banco = "alura";
 
-        $banco = parse_ini_file('config.ini');
-        $banco = $banco["tipoBanco"];
-        if ($tipoBanco == "mysql") {
-            $conexao = mysqli_connect("meuHost", "meuUsuario", "minhaSenha", "meuBanco");
-        } elseif ($tipoBanco == "postgree") {
-            $conexao = pg_connect("host=meuHost port=5432 dbname=meuBanco user=meuUsuario password=meuBanco");
-        }
+        $conn = mysql_connect($host, $user, $pass, $banco);
 
         return $conn;
     }
