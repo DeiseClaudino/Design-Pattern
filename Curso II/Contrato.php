@@ -51,7 +51,7 @@ class Contrato
 
     public function salvaEstado()
     {
-        return new Estado(new Contrato($this->data, $this->cliente, $this->tipo));
+        return new Estado(new Contrato($this->cliente, $this->data, $this->tipo));
     }
 
     public function restaura(Estado $estado)

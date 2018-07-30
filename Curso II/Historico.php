@@ -11,7 +11,7 @@ class Historico
 
     public function pega($index)
     {
-        return $this->estadosSalvos[index];
+        return $this->estadosSalvos[$index];
     }
     public function adiciona(Estado $estado)
     {

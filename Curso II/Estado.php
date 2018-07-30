@@ -1,17 +1,16 @@
 <?php
 
-class Estado{
+class Estado
+{
+    private $contrato;
 
-  private $contrato;
+    public function __construct(Contrato $contrato)
+    {
+        $this->contrato = $contrato;
+    }
 
-  public function Estado(Contrato $contrato){
-    $this->contrato = $contrato;
-
-  }
-
-  public function getEstado()
-  {
-    return $this->contrato;
-  }
-
+    public function getEstado()
+    {
+        return $this->contrato;
+    }
 }
