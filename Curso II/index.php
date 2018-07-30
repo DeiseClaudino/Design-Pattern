@@ -1,7 +1,15 @@
 <?php
   error_reporting(0);
 
-  require 'ConnectionFactory.php';
+  echo "Design Patterns II</br></br> ";
+
+  function autoloadDeClasses($nomeDaClasse)
+  {
+      require $nomeDaClasse.".php";
+  }
+
+  spl_autoload_register("autoloadDeClasses");
+
 
   $factory = new ConnectionFactory();
 
