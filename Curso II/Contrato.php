@@ -6,37 +6,46 @@ class Contrato
     private $cliente;
     private $tipo;
 
-    function __construct($datam $cliente)
+    public function __construct($cliente, $data, $tipo = null)
     {
-      $this->data = $data;
-      $this->cliente = $cliente;
-      $this->tipo = new Novo();
+        $this->data = $data;
+        $this->cliente = $cliente;
+        if (!is_null($tipo)) {
+            $this->tipo = $tipo;
+        } else {
+            $this->tipo = new Novo();
+        }
     }
 
     public function getData()
     {
-      return $this->data;
+        return $this->data;
     }
 
     public function setData($data)
     {
-      return $this->data;
+        return $this->data;
     }
 
 
     public function getCliente()
     {
-      return $this->cliente;
+        return $this->cliente;
     }
 
 
     public function setCliente($cliente)
     {
-      return $this->cliente;
+        return $this->cliente;
     }
 
     public function avanca()
     {
-      $this->tipo->avanca();
+        $this->tipo->avanca();
+    }
+
+    public function salvaEstado()
+    {
+        return new Estado(new Contrato($this->data, $this->cliente, $this->tipo));
     }
 }
