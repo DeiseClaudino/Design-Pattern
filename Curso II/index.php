@@ -16,19 +16,3 @@
   $conexao = $factory->getConnection();
 
   $select = "SELECT * FROM cursos";
-
-  $historico  = new Historico();
-
-  $contrato = new Contrato(date("Y-m-d"), "Renan");
-  $historico->adiciona($contrato->salvaEstado());
-
-$contrato->avanca();
-$historico->adiciona($contrato->salvaEstado());
-
-$contrato->avanca();
-$historico->adiciona($contrato->salvaEstado());
-
-$contrato->avanca();
-$historico->adiciona($contrato->salvaEstado());
-
-$contrato->restaura($historico->pega(1));
