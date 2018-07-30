@@ -1,4 +1,10 @@
 <?php
+echo "Design Patterns II - TestaConta</br></br> ";
+
+function autoloadDeClasses($nomeDaClasse)
+{
+    require $nomeDaClasse.".php";
+}
 
 $esquerda = new Subtracao(new Numero(10), new Numero(5));
 $direita = new Soma(new Numero(2), new Numero(10));
