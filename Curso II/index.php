@@ -30,3 +30,5 @@ $historico->adiciona($contrato->salvaEstado());
 
 $contrato->avanca();
 $historico->adiciona($contrato->salvaEstado());
+
+$contrato->restaura($historico->pega(1));
