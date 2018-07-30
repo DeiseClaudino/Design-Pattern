@@ -24,4 +24,4 @@ $historico->adiciona($contrato->salvaEstado());
 $contrato->avanca();
 var_dump($contrato);
 
-var_dump($historico->pega(0)->getEstado());
+var_dump($historico->pega(0));
