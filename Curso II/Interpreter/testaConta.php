@@ -1,6 +1,7 @@
 <?php
 echo "Design Patterns II - TestaConta</br></br> ";
 
+echo "Conta: 10-5+2+10 </br></br> ";
 function autoloadDeClasses($nomeDaClasse)
 {
     require $nomeDaClasse.".php";
@@ -15,4 +16,4 @@ $conta = new Soma($esquerda, $direita);
 
 $resultado = $conta->avalia();
 
-echo $resultado;
+echo "O resultado é: ".$resultado;
