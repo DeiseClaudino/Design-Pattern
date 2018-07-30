@@ -2,5 +2,5 @@
 
 interface Expressao
 {
-  
+    public function avalia();
 }

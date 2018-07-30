@@ -8,4 +8,9 @@ class Numero implements Expressao
     {
         $this->numero = $numero;
     }
+
+    public function avalia()
+    {
+        return $this->numero;
+    }
 }
