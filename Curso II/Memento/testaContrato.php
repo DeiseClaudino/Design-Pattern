@@ -25,3 +25,4 @@ $contrato->avanca();
 var_dump($contrato);
 
 var_dump($historico->pega(0));
+var_dump($historico->pega(1));
