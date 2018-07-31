@@ -17,9 +17,20 @@ class Soma implements Expressao
         $resultadoDaDireita = $this->direita->avalia();
         return $resultadoDaEsquerda + $resultadoDaDireita;
     }
+    
+    public function getEsquerda()
+    {
+        return $this->esquerda;
+    }
+
+    public function getDireita()
+    {
+        return $this->direita;
+    }
+
 
     public function aceita(Visitor $visitor)
     {
-        $visitor = visitaSoma($this);
+        $visitor->visitaSoma($this);
     }
 }

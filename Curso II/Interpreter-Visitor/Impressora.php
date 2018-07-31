@@ -7,7 +7,7 @@ class Impressora implements Visitor
         echo "(";
         $soma->getEsquerda()->aceita($this);
         echo "+";
-        $soma->getDireita->aceita($this);
+        $soma->getDireita()->aceita($this);
         echo ")";
     }
 
@@ -23,18 +23,18 @@ class Impressora implements Visitor
     public function visitaMultiplicacao(Multiplicacao $multiplicação)
     {
         echo "(";
-        $subtracao->getEsquerda()->aceita($this);
+        $multiplicação->getEsquerda()->aceita($this);
         echo "*";
-        $subtracao->getDireita()->aceita($this);
+        $multiplicação->getDireita()->aceita($this);
         echo ")";
     }
 
     public function visitaDivisao(Divisao $divisao)
     {
         echo "(";
-        $subtracao->getEsquerda()->aceita($this);
+        $divisao->getEsquerda()->aceita($this);
         echo "/";
-        $subtracao->getDireita()->aceita($this);
+        $divisao->getDireita()->aceita($this);
         echo ")";
     }
 
@@ -42,7 +42,7 @@ class Impressora implements Visitor
     {
         echo "(";
         echo "V";
-        $subtracao->getEsquerda()->aceita($this);
+        $raizQuadrada->getEsquerda()->aceita($this);
         echo ")";
     }
 

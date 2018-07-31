@@ -16,7 +16,7 @@ class RaizQuadrada implements Expressao{
 
     public function aceita(Visitor $visitor)
     {
-        $visitor = visitaRaizQuadrada($this);
+        $visitor->visitaRaizQuadrada($this);
     }
 
 }

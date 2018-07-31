@@ -18,9 +18,20 @@ class Divisao implements Expressao
         $resultadoDaDireita = $this->direita->avalia();
         return $resultadoDaEsquerda / $resultadoDaDireita;
     }
-
-    public function aceita(Impressora $visitor)
+    
+    public function getEsquerda()
     {
-        $visitor = visitaDivisao($this);
+        return $this->esquerda;
+    }
+
+    public function getDireita()
+    {
+        return $this->direita;
+    }
+
+
+    public function aceita(Visitor $visitor)
+    {
+        $visitor->visitaDivisao($this);
     }
 }

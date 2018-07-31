@@ -19,8 +19,19 @@ class Multiplicacao implements Expressao
         return $resultadoDaEsquerda * $resultadoDaDireita;
     }
 
+    public function getEsquerda()
+    {
+        return $this->esquerda;
+    }
+
+    public function getDireita()
+    {
+        return $this->direita;
+    }
+
+
     public function aceita(Visitor $visitor)
     {
-        $visitor = visitaMultiplicacao($this);
+        $visitor->visitaMultiplicacao($this);
     }
 }

@@ -19,8 +19,18 @@ class Subtracao implements Expressao
         return $resultadoDaEsquerda - $resultadoDaDireita;
     }
 
+    public function getEsquerda()
+    {
+        return $this->esquerda;
+    }
+
+    public function getDireita()
+    {
+        return $this->direita;
+    }
+
     public function aceita(Visitor $visitor)
     {
-      $visitor->visitaSubtracao($this);
+        $visitor->visitaSubtracao($this);
     }
 }
