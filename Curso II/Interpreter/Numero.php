@@ -13,4 +13,9 @@ class Numero implements Expressao
     {
         return $this->numero;
     }
+
+    public function aceita(Visitor $visitor)
+    {
+        $visitor = visitaRaizQuadrada($this);
+    }
 }

@@ -14,7 +14,7 @@ class RaizQuadrada implements Expressao{
         return sqrt($resultadoDaEsquerda);
     }
 
-    public function aceita(Impressora $visitor)
+    public function aceita(Visitor $visitor)
     {
         $visitor = visitaRaizQuadrada($this);
     }

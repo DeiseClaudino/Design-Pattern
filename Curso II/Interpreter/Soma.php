@@ -18,7 +18,7 @@ class Soma implements Expressao
         return $resultadoDaEsquerda + $resultadoDaDireita;
     }
 
-    public function aceita(Impressora $visitor)
+    public function aceita(Visitor $visitor)
     {
         $visitor = visitaSoma($this);
     }

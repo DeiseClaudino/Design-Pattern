@@ -1,6 +1,6 @@
 <?php
 
-class Impressora
+class Impressora implements Visitor
 {
     public function visitaSoma(Soma $soma)
     {
@@ -48,7 +48,7 @@ class Impressora
 
 
 
-    public function vistaNumero(Numero $numero)
+    public function visitaNumero(Numero $numero)
     {
         echo $numero->getNumero();
     }
