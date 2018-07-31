@@ -5,20 +5,48 @@ class Impressora
     public function visitaSoma(Soma $soma)
     {
         echo "(";
-        VISITA($esquerda);
+        $soma->getEsquerda()->aceita($this);
         echo "+";
-        VISITA($direita);
+        $soma->getDireita->aceita($this);
         echo ")";
     }
 
     public function visitaSubtracao(Subtracao $subtracao)
     {
         echo "(";
-        VISITA($esquerda);
-        echo "+";
-        VISITA($direita);
+        $subtracao->getEsquerda()->aceita($this);
+        echo "-";
+        $subtracao->getDireita()->aceita($this);
         echo ")";
     }
+
+    public function visitaMultiplicacao(Multiplicacao $multiplicação)
+    {
+        echo "(";
+        $subtracao->getEsquerda()->aceita($this);
+        echo "*";
+        $subtracao->getDireita()->aceita($this);
+        echo ")";
+    }
+
+    public function visitaDivisao(Divisao $divisao)
+    {
+        echo "(";
+        $subtracao->getEsquerda()->aceita($this);
+        echo "/";
+        $subtracao->getDireita()->aceita($this);
+        echo ")";
+    }
+
+    public function visitaRaizQuadrada(RaizQuadrada $raizQuadrada)
+    {
+        echo "(";
+        echo "V";
+        $subtracao->getEsquerda()->aceita($this);
+        echo ")";
+    }
+
+
 
     public function vistaNumero(Numero $numero)
     {

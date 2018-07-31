@@ -18,4 +18,9 @@ class Subtracao implements Expressao
         $resultadoDaDireita = $this->direita->avalia();
         return $resultadoDaEsquerda - $resultadoDaDireita;
     }
+
+    public function aceita(Impressora $visitor)
+    {
+      $visitor->visitaSubtracao($this);
+    }
 }
