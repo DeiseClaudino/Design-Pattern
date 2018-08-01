@@ -11,12 +11,12 @@ class FilaDeTrabalho
 
     public function adiciona(Comando $comando)
     {
-        $this->comandos[] = ($comando);
+        $this->comandos[] = $comando;
     }
 
     public function processa()
     {
-        foreach ($comandos as $comando) {
+        foreach($this->comandos as $comando) {
             $comando->executa();
         }
     }

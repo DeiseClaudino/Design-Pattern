@@ -1,14 +1,17 @@
 <?php
 
-class PagaPedido implements Comando{
-  private $pedido;
+class PagaPedido implements Comando
+{
+    private $pedido;
 
-  function __construct(Pedido $pedido){
-    $this->pedido = $pedido;
-  }
+    public function __construct(Pedido $pedido)
+    {
+        $this->pedido = $pedido;
+    }
 
-  public function executa()
-  {
-    $pedido->paga()
-  }
+    public function executa()
+    {
+      echo "</br>Pagando pedido do cliente: ".$this->pedido->getCliente()."</br>";
+        $this->pedido->paga();
+    }
 }

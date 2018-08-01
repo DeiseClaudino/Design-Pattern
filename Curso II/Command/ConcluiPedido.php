@@ -11,6 +11,7 @@ class ConcluiPedido implements Comando
 
     public function executa($value='')
     {
-        $pedido->finaliza();
+      echo "</br>Finalizando o pedido do cliente: ".$this->pedido->getCliente()."</br>";
+        $this->pedido->finaliza();
     }
 }

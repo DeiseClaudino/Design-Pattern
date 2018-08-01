@@ -10,7 +10,8 @@ class Pedido
     public function __construct($cliente, $valor)
     {
         $this->cliente = $cliente;
-        $thiis->valor = $valor;
+        $this->valor = $valor;
+        $this->status = new NovoPedido();
     }
 
     public function paga()
@@ -21,6 +22,11 @@ class Pedido
     public function finaliza()
     {
         $this->dataFinalizacao = date("Y-m-d");
-        $this->status = new Entregue();
+        $this->status = new Finalizado();
+    }
+
+    public function getCliente()
+    {
+      return $this->cliente;
     }
 }
