@@ -1,6 +1,6 @@
 <?php
 
-public interface Mapa
+interface Mapa
 {
-  public function devolveMapa($rua);
+  public function getMapa();
 }

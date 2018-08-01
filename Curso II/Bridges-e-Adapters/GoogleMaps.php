@@ -1,9 +1,10 @@
 <?php
 
-public class GoogleMaps implements Mapa {
-  public function devolveMapa($rua)
+class GoogleMaps implements Mapa
+ {
+  public function getMapa()
   {
-    $mapa =
-    $conteudo = $mapa->devolveMapa("Rua Vergueiro, 3185");
+  //  $mapa = "maps.google.com/maps?q=rua+Vergueiro";
+    echo "Mapa do Google";
   }
 }

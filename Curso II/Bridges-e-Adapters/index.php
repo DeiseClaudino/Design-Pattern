@@ -9,11 +9,16 @@ function autoloadDeClasses($nomeDaClasse)
 
 spl_autoload_register("autoloadDeClasses");
 
-
-$google = "http://maps.google.com.br/maps?q=rua vergueiro";
-
 $data = new Relogio();
 
 echo $data->getDia();
 echo "/";
-echo $data->getMes();
+echo $data->getMes()."</br>";
+
+$mapa = new GoogleMaps();
+
+echo $mapa->getMapa()."</br>";
+
+$mapa2 = new MapLink();
+
+echo "</br>".$mapa2->getMapa()."</br>";
