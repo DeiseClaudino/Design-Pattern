@@ -1,8 +1,13 @@
 <?php
 class Relogio
 {
-    public function hoje()
+    public function getDia()
     {
-        return date("Y-m-d");
+        return date("d");
+    }
+
+    public function getMes()
+    {
+        return date("m");
     }
 }
