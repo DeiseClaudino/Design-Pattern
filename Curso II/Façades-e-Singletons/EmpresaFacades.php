@@ -2,6 +2,18 @@
 
 class EmpresaFacades
 {
+  private static $instance = null;
+
+  private EmpresaFacades(){}
+
+  public function static getIsntance()
+  {
+    if (is_null($this->instance)) {
+      $this->instance = new EmpresaFacades();
+    }
+    return $this->instance;
+  }
+  
   public function buscaCliente($cpf)
   {
     return new ClienteDao()->buscaPorCpf($cpf);
